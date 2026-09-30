@@ -1,0 +1,21 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Misteri DMR — The Ordinary Day</title><style>
+*{box-sizing:border-box}body{margin:0;background:#07090d;color:#e8edf4;font-family:Arial,sans-serif;min-height:100vh}.wrap{width:min(900px,92%);margin:auto;padding:40px 0}.top{display:flex;justify-content:space-between;color:#738095;font-size:11px;letter-spacing:2px}.panel{margin-top:18px;background:#11161f;border:1px solid #2b3442;border-radius:18px;padding:30px;box-shadow:0 25px 90px #0009}.tag{display:inline-block;border:1px solid #394454;border-radius:99px;padding:6px 10px;font-size:11px;letter-spacing:1px;color:#9ba7b8}h1{font-size:clamp(40px,7vw,70px);line-height:.95;letter-spacing:-3px;margin:15px 0}.red{color:#e04a52}.muted,.tiny{color:#8792a3}.tiny{font-size:12px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.card{background:#171e28;border:1px solid #303b4b;border-radius:12px;padding:18px}.clue{border-left:3px solid #e04a52;padding:12px 15px;background:#151b24;margin:18px 0}.code{background:#070a0e;border:1px dashed #465163;border-radius:10px;padding:15px;font-family:Consolas,monospace}table{width:100%;border-collapse:collapse;margin:20px 0}th,td{padding:12px;border-bottom:1px solid #303947;text-align:left}th{font-size:12px;color:#aeb8c7}button,.btn{border:0;border-radius:9px;background:#293548;color:white;padding:13px 17px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}input{background:#090c11;border:1px solid #3a4556;border-radius:9px;color:white;padding:12px 14px;font-size:16px}.msg{margin-top:16px;padding:14px;border-radius:10px;display:none}.ok{background:#103523;border:1px solid #236b46}.bad{background:#39171b;border:1px solid #7c2e35}.choice{display:block;width:100%;text-align:left;margin:7px 0;background:#171e28;border:1px solid #303b4b}.center{text-align:center}.wave{height:100px;border-radius:9px;background:repeating-linear-gradient(90deg,#1c2735 0 3px,#0d1219 3px 8px);position:relative;margin:20px 0}.silent{position:absolute;left:82%;right:2%;top:0;bottom:0;border:2px solid #e04a52;border-radius:5px}
+</style></head><body><main class="wrap">
+<div class="top"><span>DMR // CASE 047</span><span>DO NOT TRUST THE OBVIOUS</span></div>
+<section class="panel"><span class="tag">LEVEL 1 / THE ORDINARY DAY</span>
+<h1>Hari yang<br><span class="red">seharusnya biasa.</span></h1>
+<p class="muted">Kalender seorang pegawai DMR. Semuanya terlihat normal.</p>
+<div class="cards">
+<div class="card"><b>08.00</b><br>Rapat</div><div class="card"><b>09.30</b><br>Review</div>
+<div class="card"><b>11.00</b><br>Coffee</div><div class="card"><b>12.00</b><br>Lunch</div>
+<div class="card"><b>13.30</b><br><b>RISK TRACKING</b></div><div class="card"><b>15.00</b><br>Meeting</div>
+<div class="card"><b>16.30</b><br>Pulang</div></div>
+<div class="clue"><b>File:</b> <code>calendar_final_FINAL2_revisi.png</code><br><span class="tiny">FINAL dua kali. Ada sesuatu yang belum selesai.</span></div>
+<p>Beberapa waktu tidak konsisten. Satu event memakai huruf kapital. Ada tanggal yang jatuh pada weekend.</p>
+<p><b>Apa yang sebenarnya harus kamu cari?</b></p>
+<input id="a" placeholder="jawaban..."> <button onclick="go()">PERIKSA</button><div id="m" class="msg"></div>
+<p class="tiny">Petunjuk: browser tahu lebih banyak daripada yang ditampilkan.</p></section>
+</main><!-- You looked where everyone looks. -->
+<!-- Now look where nobody looks. -->
+<!-- OPEN: dmr_17.html -->
+<script>function go(){let a=document.getElementById('a').value.toLowerCase().trim(),m=document.getElementById('m');m.style.display='block';if(a==='source'||a==='view source'){m.className='msg ok';m.innerHTML='✓ LEVEL 1 CLEAR. Buka View Source halaman ini dan cari kata OPEN.'}else{m.className='msg bad';m.innerHTML='✕ Bukan isi kalender. Cari tempat yang tidak terlihat.'}}</script></body></html>

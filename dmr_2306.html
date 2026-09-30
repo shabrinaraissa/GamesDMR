@@ -1,0 +1,24 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Misteri DMR — The One Who Knows</title><style>
+*{box-sizing:border-box}body{margin:0;background:#07090d;color:#e8edf4;font-family:Arial,sans-serif;min-height:100vh}.wrap{width:min(900px,92%);margin:auto;padding:40px 0}.top{display:flex;justify-content:space-between;color:#738095;font-size:11px;letter-spacing:2px}.panel{margin-top:18px;background:#11161f;border:1px solid #2b3442;border-radius:18px;padding:30px;box-shadow:0 25px 90px #0009}.tag{display:inline-block;border:1px solid #394454;border-radius:99px;padding:6px 10px;font-size:11px;letter-spacing:1px;color:#9ba7b8}h1{font-size:clamp(40px,7vw,70px);line-height:.95;letter-spacing:-3px;margin:15px 0}.red{color:#e04a52}.muted,.tiny{color:#8792a3}.tiny{font-size:12px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.card{background:#171e28;border:1px solid #303b4b;border-radius:12px;padding:18px}.clue{border-left:3px solid #e04a52;padding:12px 15px;background:#151b24;margin:18px 0}.code{background:#070a0e;border:1px dashed #465163;border-radius:10px;padding:15px;font-family:Consolas,monospace}table{width:100%;border-collapse:collapse;margin:20px 0}th,td{padding:12px;border-bottom:1px solid #303947;text-align:left}th{font-size:12px;color:#aeb8c7}button,.btn{border:0;border-radius:9px;background:#293548;color:white;padding:13px 17px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}input{background:#090c11;border:1px solid #3a4556;border-radius:9px;color:white;padding:12px 14px;font-size:16px}.msg{margin-top:16px;padding:14px;border-radius:10px;display:none}.ok{background:#103523;border:1px solid #236b46}.bad{background:#39171b;border:1px solid #7c2e35}.choice{display:block;width:100%;text-align:left;margin:7px 0;background:#171e28;border:1px solid #303b4b}.center{text-align:center}.wave{height:100px;border-radius:9px;background:repeating-linear-gradient(90deg,#1c2735 0 3px,#0d1219 3px 8px);position:relative;margin:20px 0}.silent{position:absolute;left:82%;right:2%;top:0;bottom:0;border:2px solid #e04a52;border-radius:5px}
+</style></head><body><main class="wrap">
+<div class="top"><span>DMR // CASE 047</span><span>LEVEL 4</span></div>
+<section class="panel"><span class="tag">THE ONE WHO KNOWS</span>
+<h1>Who actually<br><span class="red">knows?</span></h1>
+<p class="muted">Tepat satu pernyataan benar.</p>
+<div class="cards">
+<div class="card"><b>A — Raka</b><br>“B tahu.”</div><div class="card"><b>B — Sinta</b><br>“C tahu.”</div>
+<div class="card"><b>C — Dimas</b><br>“D tahu.”</div><div class="card"><b>D — Naya</b><br>“E tahu.”</div>
+<div class="card"><b>E — Ibnu</b><br>“Saya tidak tahu.”</div></div>
+<div class="clue">Jika E benar, A–D semuanya salah. Uji secara logika.</div>
+<p><b>Siapa yang benar-benar tahu?</b></p>
+<button class="choice" onclick="ans('a')">A — Raka</button><button class="choice" onclick="ans('b')">B — Sinta</button>
+<button class="choice" onclick="ans('c')">C — Dimas</button><button class="choice" onclick="ans('d')">D — Naya</button>
+<button class="choice" onclick="ans('e')">E — Ibnu</button><div id="m" class="msg"></div>
+<div id="why" style="display:none;margin-top:20px"><p><b>WHO</b> ditemukan. Sekarang cari <b>WHY</b>.</p>
+<div class="code">Employee ID: 2306<br>Document date: 23/06<br>File author: KADIV</div>
+<input id="p" placeholder="apa yang dicari?"> <button onclick="next()">PERIKSA</button><div id="pm" class="msg"></div></div></section>
+</main><!-- WHO is only half the question. -->
+<!-- WHY leads to the person behind the game. -->
+<!-- NEXT: last_thing.html -->
+<script>function ans(x){let m=document.getElementById('m');m.style.display='block';if(x==='e'){m.className='msg ok';m.innerHTML='✓ E adalah satu-satunya pernyataan yang konsisten benar. WHO = IBNU.';document.getElementById('why').style.display='block'}else{m.className='msg bad';m.innerHTML='✕ Belum. Uji kondisi saat tepat satu pernyataan benar.'}}
+function next(){let a=document.getElementById('p').value.toLowerCase().trim(),m=document.getElementById('pm');m.style.display='block';if(a==='why'||a==='mengapa'){m.className='msg ok';m.innerHTML='✓ Kamu menemukan pertanyaan yang benar. Lanjut ke file terakhir.';setTimeout(()=>location.href='last_thing.html',1400)}else{m.className='msg bad';m.innerHTML='✕ WHO sudah ketemu. Sekarang WHY.'}}</script></body></html>
