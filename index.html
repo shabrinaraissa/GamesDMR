@@ -3,91 +3,166 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Misteri DMR — The Ordinary Day</title>
+<title>Misteri DMR — Level 1</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5fff8;color:#24352b}
-.wrap{width:min(900px,92%);margin:auto;padding:34px 0 60px}
-.top{display:flex;justify-content:space-between;gap:15px;color:#4c765d;font-size:11px;letter-spacing:2px}
-.panel{margin-top:18px;background:#fff;border:1px solid #d8eee0;border-radius:24px;padding:30px;box-shadow:0 18px 55px rgba(43,106,66,.10)}
-.tag{display:inline-block;background:#e5f7eb;color:#247342;border-radius:99px;padding:7px 11px;font-size:11px;font-weight:800;letter-spacing:1px}
-h1{font-size:clamp(38px,7vw,66px);line-height:.95;letter-spacing:-3px;margin:16px 0 10px;color:#183d28}
-h2{color:#1f5935}
-.muted{color:#6f8376;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.card{padding:18px;border:1px solid #dceee2;border-radius:16px;background:#f8fffa}
-.card b{color:#237744}
-.clue{margin:20px 0;padding:15px 17px;border-left:4px solid #48ad6a;background:#effaf2;border-radius:10px;line-height:1.6}
-input{width:min(360px,100%);padding:13px;border:1px solid #cfe4d5;border-radius:10px;font-size:16px;outline:none}
-button,.btn{border:0;border-radius:10px;background:#3c9d5b;color:white;padding:13px 18px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
-button:hover,.btn:hover{background:#2e8249}
-.msg{margin-top:14px;padding:14px;border-radius:10px;display:none;line-height:1.5}
-.ok{display:block;background:#eaf8ee;border:1px solid #bfe4ca;color:#216238}
-.bad{display:block;background:#fff2f2;border:1px solid #f0cccc;color:#9b4141}
-table{width:100%;border-collapse:collapse;margin:18px 0}
-th,td{padding:12px;border-bottom:1px solid #e1eee5;text-align:left}
-th{color:#467055;background:#f5fbf7}
-.choice{display:block;width:100%;text-align:left;margin:8px 0;background:#f8fffa;color:#294b35;border:1px solid #d5e9da}
-.center{text-align:center}
-.big{font-size:28px;font-weight:900;color:#277642}
-.footer{text-align:center;color:#82958a;font-size:11px;margin-top:18px}
+body{
+  margin:0;min-height:100vh;font-family:Arial,sans-serif;
+  background:#030605;color:#e9f4ec;
+}
+.wrap{width:min(850px,92%);margin:auto;padding:45px 0}
+.top{display:flex;justify-content:space-between;color:#66756c;font-size:11px;letter-spacing:2px}
+.panel{
+  margin-top:18px;background:#070b09;border:1px solid #1d2b23;
+  border-radius:26px;padding:35px;
+  box-shadow:0 20px 70px rgba(0,0,0,.75);
+  text-align:center;
+}
+.badge{
+  display:inline-block;background:#0d2117;color:#7dd995;
+  border:1px solid #214c32;border-radius:999px;padding:8px 14px;
+  font-size:12px;font-weight:800;letter-spacing:1px
+}
+h1{
+  font-size:clamp(40px,7vw,68px);line-height:.95;
+  letter-spacing:-3px;margin:18px 0 10px;color:#f1f7f3
+}
+.green{color:#73d68e}
+.muted{color:#9aa9a0;line-height:1.75;max-width:700px;margin:0 auto}
+.lamp-area{
+  margin:38px auto 30px;width:250px;height:250px;position:relative;
+}
+.glow{
+  position:absolute;left:50%;top:35px;transform:translateX(-50%);
+  width:175px;height:175px;border-radius:50%;
+  background:rgba(255,211,54,.12);
+  box-shadow:0 0 75px 38px rgba(255,211,54,.14);
+}
+.bulb{
+  position:absolute;left:50%;top:48px;transform:translateX(-50%);
+  width:88px;height:105px;border-radius:50% 50% 45% 45%;
+  background:#ffe873;border:4px solid #d7b82f;
+  box-shadow:0 0 35px 12px rgba(255,221,75,.75),
+             0 0 90px 35px rgba(255,213,57,.22);
+}
+.bulb:after{
+  content:"";position:absolute;left:22px;right:22px;bottom:-30px;
+  height:35px;background:#52635a;border-radius:5px 5px 10px 10px;
+}
+.base{
+  position:absolute;left:50%;transform:translateX(-50%);
+  bottom:28px;width:75px;height:16px;border-radius:50%;
+  background:#39473f;
+}
+.ray{position:absolute;width:28px;height:5px;border-radius:99px;background:#e5c53f;opacity:.85}
+.r1{left:20px;top:78px;transform:rotate(-25deg)}
+.r2{right:20px;top:78px;transform:rotate(25deg)}
+.r3{left:5px;top:145px;transform:rotate(15deg)}
+.r4{right:5px;top:145px;transform:rotate(-15deg)}
+.clue{
+  background:#0b130f;border:1px solid #20382a;
+  border-radius:15px;padding:16px;margin:10px 0 22px;color:#aebbb2
+}
+.morse{
+  background:#020403;color:#dfffe7;border-radius:15px;
+  padding:22px 16px;font-family:Consolas,monospace;
+  font-size:clamp(20px,4vw,31px);letter-spacing:5px;
+  margin:18px 0 25px;border:1px solid #274a35;
+  box-shadow:0 0 20px rgba(76,180,103,.08);
+}
+.answer{display:flex;gap:10px;max-width:560px;margin:0 auto}
+input{
+  flex:1;min-width:0;padding:14px 16px;
+  background:#050806;color:#f2fff5;
+  border:1px solid #31473a;border-radius:12px;
+  font-size:17px;outline:none
+}
+input:focus{border-color:#6acb82;box-shadow:0 0 0 3px rgba(106,203,130,.08)}
+button{
+  border:0;border-radius:12px;padding:14px 20px;
+  background:#2c8f50;color:#fff;font-weight:800;cursor:pointer
+}
+button:hover{background:#39a55f}
+.msg{
+  display:none;max-width:560px;margin:16px auto 0;
+  padding:15px;border-radius:12px;font-weight:700
+}
+.ok{background:#0b2615;color:#8ee5a2;border:1px solid #245d35}
+.bad{background:#29100f;color:#ffaaa4;border:1px solid #67312c}
+.tiny{font-size:12px;color:#66766c;margin-top:20px}
 </style>
 </head>
+
 <body>
 <main class="wrap">
-<div class="top"><span>DMR // CASE 047</span><span>KEEP LOOKING</span></div>
-<section class="panel">
-<span class="tag">LEVEL 1 / THE ORDINARY DAY</span>
+  <div class="top">
+    <span>DMR // CASE 047</span>
+    <span>LEVEL 2</span>
+  </div>
 
-<h1>Hari yang<br><span style="color:#43a963">seharusnya biasa.</span></h1>
-<p class="muted">Sebuah kalender DMR. Tidak ada yang aneh. Seharusnya.</p>
+  <section class="panel">
+    <span class="badge">LEVEL 2 / THE SILENT MESSAGE</span>
 
-<div class="grid">
-<div class="card">🌱 <b>08.00</b><br>DMR Talk: Green Energy</div>
-<div class="card">⚡ <b>10.00</b><br>RKP Power House to Save Energy</div>
-<div class="card">🤝 <b>14.00</b><br>Audiensi GBI</div>
-<div class="card">📋 <b>15.00</b><br>Rapat Teknis Gathering DMR</div>
-<div class="card">🏓 <b>17.00</b><br>DMR PINGPONG COMPETITION</div>
-</div>
+    <h1>Ada yang<br><span class="green">menyala.</span></h1>
 
-<div class="clue">
-<b>Petunjuk:</b><br>
-Terkadang, kita melupakan apa yang ada <b>di belakang kita.</b><br>
-1 warna, hanya terlihat jika kita tidak lupa melihat ke belakang.
-</div>
+    <p class="muted">
+      DMR sedang membantu kebencanaan di suatu wilayah terpencil,
+      namun, tiba-tiba listrik padam.<br><br>
+      Kamu tiba-tiba menemukan suatu cahaya, beserta kode aneh.
+      <br><br>
+      <b>Pecahkan kode tersebut, untuk membawa keberlangsungan games ini sebelum RTO habis.</b>
+    </p>
 
-<p><b>Menemukan sesuatu?</b></p>
-<input id="a" placeholder="jawaban...">
-<button onclick="go()">PERIKSA</button>
-<div id="m" class="msg"></div>
+    <div class="lamp-area">
+      <div class="glow"></div>
+      <div class="ray r1"></div>
+      <div class="ray r2"></div>
+      <div class="ray r3"></div>
+      <div class="ray r4"></div>
+      <div class="bulb"></div>
+      <div class="base"></div>
+    </div>
 
-<div class="center" style="margin-top:30px">
-<div style="position:relative;display:inline-block;cursor:pointer" onclick="reveal()">
-<span id="back" style="position:absolute;inset:8px;background:#48ad6a;border-radius:14px;z-index:0;opacity:0;transition:.3s"></span>
-<span style="position:relative;z-index:1;display:inline-block;background:white;padding:10px 18px;border-radius:12px;font-size:40px;font-weight:900;letter-spacing:6px;color:#607568">DMR</span>
-</div>
-<p id="secret" style="display:none;color:#277642;font-weight:800">🎨 Kamu melihat sesuatu di belakang.</p>
-</div>
+    <div class="clue">
+      <b>Pesan di bawah lampu:</b>
+      <br>
+      Gunakan titik dan garis untuk menemukan katanya.
+    </div>
 
-</section>
-<div class="footer">DMR Mystery Game • Jangan terlalu percaya hal pertama yang terlihat.</div>
+    <div class="morse">- .. .--. .. -.- .- .-..</div>
+
+    <p><b>Masukkan jawabanmu:</b></p>
+
+    <div class="answer">
+      <input id="answer" placeholder="jawaban..." autocomplete="off">
+      <button onclick="checkAnswer()">PERIKSA</button>
+    </div>
+
+    <div id="message" class="msg"></div>
+
+    <p class="tiny">Tidak perlu membuka source. Kali ini, pecahkan kodenya.</p>
+  </section>
 </main>
 
-<!-- You looked where everyone looks. -->
-<!-- Now look where nobody looks. -->
-<!-- add this to website address: dmr_17 -->
-
 <script>
-function go(){
- const m=document.getElementById('m');
- m.style.display='block';
- m.className='msg bad';
- m.innerHTML='✕ Bukan di kolom ini. Kadang kita terlalu fokus mencari di depan.';
+function checkAnswer(){
+  const answer=document.getElementById('answer').value.trim().toUpperCase();
+  const message=document.getElementById('message');
+
+  message.style.display='block';
+
+  if(answer==='TIPIKAL'){
+    message.className='msg ok';
+    message.innerHTML='✓ BENAR! Pesannya adalah <b>TIPIKAL</b>.<br><br>LEVEL 2 CLEAR.';
+  }else{
+    message.className='msg bad';
+    message.innerHTML='✕ Belum tepat. Ingat: <b>titik dan garis</b> adalah kode Morse.';
+  }
 }
-function reveal(){
- document.getElementById('back').style.opacity='1';
- document.getElementById('secret').style.display='block';
-}
+
+document.getElementById('answer').addEventListener('keydown',function(e){
+  if(e.key==='Enter') checkAnswer();
+});
 </script>
 </body>
 </html>
