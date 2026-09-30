@@ -97,11 +97,11 @@ button:hover{background:#39a55f}
 <main class="wrap">
   <div class="top">
     <span>DMR // CASE 047</span>
-    <span>LEVEL 2</span>
+    <span>LEVEL 1</span>
   </div>
 
   <section class="panel">
-    <span class="badge">LEVEL 2 / THE SILENT MESSAGE</span>
+    <span class="badge">LEVEL 1 / THE SILENT MESSAGE</span>
 
     <h1>Ada yang<br><span class="green">menyala.</span></h1>
 
@@ -140,7 +140,7 @@ button:hover{background:#39a55f}
 
     <div id="message" class="msg"></div>
 
-    <p class="tiny">Tidak perlu membuka source. Kali ini, pecahkan kodenya.</p>
+    <p class="tiny">pecahkan kodenya.</p>
   </section>
 </main>
 
@@ -152,8 +152,14 @@ function checkAnswer(){
   message.style.display='block';
 
   if(answer==='TIPIKAL'){
-    message.className='msg ok';
-    message.innerHTML='✓ BENAR! Pesannya adalah <b>TIPIKAL</b>.<br><br>LEVEL 2 CLEAR.';
+  message.className='msg ok';
+  message.innerHTML='✓ BENAR! Pesannya adalah <b>TIPIKAL</b>.<br><br>LEVEL 1 CLEAR.<br><br>Membuka pintu berikutnya...';
+
+  setTimeout(function(){
+    window.location.href='dmr_17.html';
+  },1500);
+
+
   }else{
     message.className='msg bad';
     message.innerHTML='✕ Belum tepat. Ingat: <b>titik dan garis</b> adalah kode Morse.';
