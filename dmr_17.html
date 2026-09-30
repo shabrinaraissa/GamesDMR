@@ -1,23 +1,168 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Misteri DMR — The Risk That Doesn't Exist</title><style>
-*{box-sizing:border-box}body{margin:0;background:#07090d;color:#e8edf4;font-family:Arial,sans-serif;min-height:100vh}.wrap{width:min(900px,92%);margin:auto;padding:40px 0}.top{display:flex;justify-content:space-between;color:#738095;font-size:11px;letter-spacing:2px}.panel{margin-top:18px;background:#11161f;border:1px solid #2b3442;border-radius:18px;padding:30px;box-shadow:0 25px 90px #0009}.tag{display:inline-block;border:1px solid #394454;border-radius:99px;padding:6px 10px;font-size:11px;letter-spacing:1px;color:#9ba7b8}h1{font-size:clamp(40px,7vw,70px);line-height:.95;letter-spacing:-3px;margin:15px 0}.red{color:#e04a52}.muted,.tiny{color:#8792a3}.tiny{font-size:12px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.card{background:#171e28;border:1px solid #303b4b;border-radius:12px;padding:18px}.clue{border-left:3px solid #e04a52;padding:12px 15px;background:#151b24;margin:18px 0}.code{background:#070a0e;border:1px dashed #465163;border-radius:10px;padding:15px;font-family:Consolas,monospace}table{width:100%;border-collapse:collapse;margin:20px 0}th,td{padding:12px;border-bottom:1px solid #303947;text-align:left}th{font-size:12px;color:#aeb8c7}button,.btn{border:0;border-radius:9px;background:#293548;color:white;padding:13px 17px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}input{background:#090c11;border:1px solid #3a4556;border-radius:9px;color:white;padding:12px 14px;font-size:16px}.msg{margin-top:16px;padding:14px;border-radius:10px;display:none}.ok{background:#103523;border:1px solid #236b46}.bad{background:#39171b;border:1px solid #7c2e35}.choice{display:block;width:100%;text-align:left;margin:7px 0;background:#171e28;border:1px solid #303b4b}.center{text-align:center}.wave{height:100px;border-radius:9px;background:repeating-linear-gradient(90deg,#1c2735 0 3px,#0d1219 3px 8px);position:relative;margin:20px 0}.silent{position:absolute;left:82%;right:2%;top:0;bottom:0;border:2px solid #e04a52;border-radius:5px}
-</style></head><body><main class="wrap">
-<div class="top"><span>DMR // CASE 047</span><span>LEVEL 2</span></div>
-<section class="panel"><span class="tag">THE RISK THAT DOESN'T EXIST</span>
-<h1>Find the risk<br><span class="red">that does not exist.</span></h1>
-<table><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Score</th></tr>
-<tr><td>A</td><td>4</td><td>5</td><td>20</td></tr><tr><td>B</td><td>3</td><td>4</td><td>12</td></tr>
-<tr><td>C</td><td>5</td><td>3</td><td>15</td></tr><tr><td>D</td><td>2</td><td>5</td><td>10</td></tr></table>
-<div class="clue">A B C D<br><span class="tiny">4-5 / 3-4 / 5-3 / 2-5</span></div>
-<p>Setiap risk punya owner.</p><div class="cards">
-<div class="card">A → <b>R</b></div><div class="card">B → <b>I</b></div><div class="card">C → <b>S</b></div>
-<div class="card">D → <b>K</b></div><div class="card">E → <b>?</b></div></div>
-<p><b>Siapa E?</b></p><input id="a" placeholder="jawaban..."> <button onclick="go()">PERIKSA</button><div id="m" class="msg"></div>
-<div id="t" style="display:none"><p class="muted">Sekarang pilih treatment.</p>
-<button class="choice" onclick="wrong()">ACCEPT RISK</button><button class="choice" onclick="wrong()">TRANSFER</button>
-<button class="choice" onclick="wrong()">MITIGATE</button><button class="choice" onclick="wrong()">AVOID</button><div id="tm" class="msg"></div></div></section>
-</main><!-- The score was a distraction. -->
-<!-- Some risks cannot be treated. -->
-<!-- ACCEPT -->
-<!-- NEXT: dmr_73.html -->
-<script>function go(){let a=document.getElementById('a').value.toLowerCase().trim(),m=document.getElementById('m');m.style.display='block';if(a==='risk'||a==='risk e'){m.className='msg ok';m.innerHTML='✓ E ditemukan. Tapi jangan klik tombol yang terlihat. Cari lagi di source.';document.getElementById('t').style.display='block'}else{m.className='msg bad';m.innerHTML='✕ Jangan hitung score. Cari risk yang tidak ada.'}}
-function wrong(){let m=document.getElementById('tm');m.style.display='block';m.className='msg bad';m.innerHTML='✕ Wrong. Yang dicari bukan tombol ACCEPT.'}</script></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Misteri DMR — Level 1</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;font-family:Arial,sans-serif;
+  background:#030605;color:#e9f4ec;
+}
+.wrap{width:min(850px,92%);margin:auto;padding:45px 0}
+.top{display:flex;justify-content:space-between;color:#66756c;font-size:11px;letter-spacing:2px}
+.panel{
+  margin-top:18px;background:#070b09;border:1px solid #1d2b23;
+  border-radius:26px;padding:35px;
+  box-shadow:0 20px 70px rgba(0,0,0,.75);
+  text-align:center;
+}
+.badge{
+  display:inline-block;background:#0d2117;color:#7dd995;
+  border:1px solid #214c32;border-radius:999px;padding:8px 14px;
+  font-size:12px;font-weight:800;letter-spacing:1px
+}
+h1{
+  font-size:clamp(40px,7vw,68px);line-height:.95;
+  letter-spacing:-3px;margin:18px 0 10px;color:#f1f7f3
+}
+.green{color:#73d68e}
+.muted{color:#9aa9a0;line-height:1.75;max-width:700px;margin:0 auto}
+.lamp-area{
+  margin:38px auto 30px;width:250px;height:250px;position:relative;
+}
+.glow{
+  position:absolute;left:50%;top:35px;transform:translateX(-50%);
+  width:175px;height:175px;border-radius:50%;
+  background:rgba(255,211,54,.12);
+  box-shadow:0 0 75px 38px rgba(255,211,54,.14);
+}
+.bulb{
+  position:absolute;left:50%;top:48px;transform:translateX(-50%);
+  width:88px;height:105px;border-radius:50% 50% 45% 45%;
+  background:#ffe873;border:4px solid #d7b82f;
+  box-shadow:0 0 35px 12px rgba(255,221,75,.75),
+             0 0 90px 35px rgba(255,213,57,.22);
+}
+.bulb:after{
+  content:"";position:absolute;left:22px;right:22px;bottom:-30px;
+  height:35px;background:#52635a;border-radius:5px 5px 10px 10px;
+}
+.base{
+  position:absolute;left:50%;transform:translateX(-50%);
+  bottom:28px;width:75px;height:16px;border-radius:50%;
+  background:#39473f;
+}
+.ray{position:absolute;width:28px;height:5px;border-radius:99px;background:#e5c53f;opacity:.85}
+.r1{left:20px;top:78px;transform:rotate(-25deg)}
+.r2{right:20px;top:78px;transform:rotate(25deg)}
+.r3{left:5px;top:145px;transform:rotate(15deg)}
+.r4{right:5px;top:145px;transform:rotate(-15deg)}
+.clue{
+  background:#0b130f;border:1px solid #20382a;
+  border-radius:15px;padding:16px;margin:10px 0 22px;color:#aebbb2
+}
+.morse{
+  background:#020403;color:#dfffe7;border-radius:15px;
+  padding:22px 16px;font-family:Consolas,monospace;
+  font-size:clamp(20px,4vw,31px);letter-spacing:5px;
+  margin:18px 0 25px;border:1px solid #274a35;
+  box-shadow:0 0 20px rgba(76,180,103,.08);
+}
+.answer{display:flex;gap:10px;max-width:560px;margin:0 auto}
+input{
+  flex:1;min-width:0;padding:14px 16px;
+  background:#050806;color:#f2fff5;
+  border:1px solid #31473a;border-radius:12px;
+  font-size:17px;outline:none
+}
+input:focus{border-color:#6acb82;box-shadow:0 0 0 3px rgba(106,203,130,.08)}
+button{
+  border:0;border-radius:12px;padding:14px 20px;
+  background:#2c8f50;color:#fff;font-weight:800;cursor:pointer
+}
+button:hover{background:#39a55f}
+.msg{
+  display:none;max-width:560px;margin:16px auto 0;
+  padding:15px;border-radius:12px;font-weight:700
+}
+.ok{background:#0b2615;color:#8ee5a2;border:1px solid #245d35}
+.bad{background:#29100f;color:#ffaaa4;border:1px solid #67312c}
+.tiny{font-size:12px;color:#66766c;margin-top:20px}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+  <div class="top">
+    <span>DMR // CASE 047</span>
+    <span>LEVEL 2</span>
+  </div>
+
+  <section class="panel">
+    <span class="badge">LEVEL 2 / THE SILENT MESSAGE</span>
+
+    <h1>Ada yang<br><span class="green">menyala.</span></h1>
+
+    <p class="muted">
+      DMR sedang membantu kebencanaan di suatu wilayah terpencil,
+      namun, tiba-tiba listrik padam.<br><br>
+      Kamu tiba-tiba menemukan suatu cahaya, beserta kode aneh.
+      <br><br>
+      <b>Pecahkan kode tersebut, untuk membawa keberlangsungan games ini sebelum RTO habis.</b>
+    </p>
+
+    <div class="lamp-area">
+      <div class="glow"></div>
+      <div class="ray r1"></div>
+      <div class="ray r2"></div>
+      <div class="ray r3"></div>
+      <div class="ray r4"></div>
+      <div class="bulb"></div>
+      <div class="base"></div>
+    </div>
+
+    <div class="clue">
+      <b>Pesan di bawah lampu:</b>
+      <br>
+      Gunakan titik dan garis untuk menemukan katanya.
+    </div>
+
+    <div class="morse">- .. .--. .. -.- .- .-..</div>
+
+    <p><b>Masukkan jawabanmu:</b></p>
+
+    <div class="answer">
+      <input id="answer" placeholder="jawaban..." autocomplete="off">
+      <button onclick="checkAnswer()">PERIKSA</button>
+    </div>
+
+    <div id="message" class="msg"></div>
+
+    <p class="tiny">Tidak perlu membuka source. Kali ini, pecahkan kodenya.</p>
+  </section>
+</main>
+
+<script>
+function checkAnswer(){
+  const answer=document.getElementById('answer').value.trim().toUpperCase();
+  const message=document.getElementById('message');
+
+  message.style.display='block';
+
+  if(answer==='TIPIKAL'){
+    message.className='msg ok';
+    message.innerHTML='✓ BENAR! Pesannya adalah <b>TIPIKAL</b>.<br><br>LEVEL 2 CLEAR.';
+  }else{
+    message.className='msg bad';
+    message.innerHTML='✕ Belum tepat. Ingat: <b>titik dan garis</b> adalah kode Morse.';
+  }
+}
+
+document.getElementById('answer').addEventListener('keydown',function(e){
+  if(e.key==='Enter') checkAnswer();
+});
+</script>
+</body>
+</html>
