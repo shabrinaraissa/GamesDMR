@@ -3,22 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>GEDOR BANDUNG — Gathering DMR</title>
+<title>Misteri DMR — GEDOR BANDUNG</title>
 
 <style>
 *{box-sizing:border-box}
 
-html{scroll-behavior:smooth}
-
 body{
   margin:0;
   min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial,sans-serif;
   background:
-    radial-gradient(circle at 15% 10%,rgba(55,170,92,.15),transparent 28%),
-    radial-gradient(circle at 85% 15%,rgba(240,185,70,.14),transparent 30%),
-    linear-gradient(135deg,#f4fff7,#fffdf5 48%,#f3fbff);
+    radial-gradient(circle at 20% 10%,#e8f8ec 0,#f7fff9 28%,transparent 55%),
+    linear-gradient(135deg,#f7fff9,#fffdf5);
   color:#173b29;
 }
 
@@ -31,7 +27,6 @@ body{
 .top{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   color:#61766a;
   font-size:11px;
   letter-spacing:2px;
@@ -40,12 +35,14 @@ body{
 
 .panel{
   margin-top:18px;
-  background:rgba(255,255,255,.94);
+  background:#ffffffee;
   border:1px solid #d5e8da;
   border-radius:30px;
   padding:40px;
-  box-shadow:0 25px 80px rgba(30,80,50,.12);
+  box-shadow:0 25px 80px #1e50301f;
 }
+
+.hero{text-align:center}
 
 .badge{
   display:inline-block;
@@ -59,10 +56,6 @@ body{
   letter-spacing:1.5px;
 }
 
-.hero{
-  text-align:center;
-}
-
 h1{
   margin:22px 0 0;
   font-size:clamp(55px,10vw,105px);
@@ -71,9 +64,7 @@ h1{
   color:#174d2f;
 }
 
-.green{
-  color:#39a860;
-}
+.green{color:#39a860}
 
 .subtitle{
   margin-top:26px;
@@ -147,29 +138,11 @@ h1{
   border:1px solid #d3e6d9;
   border-radius:20px;
   background:#fff;
-  box-shadow:0 10px 35px rgba(30,80,50,.08);
 }
 
 .guide img{
   width:100%;
-  height:auto;
   display:block;
-}
-
-.costume{
-  margin-top:18px;
-  padding:22px;
-  border:1px solid #d4e7d9;
-  border-radius:20px;
-  background:#f8fffa;
-  text-align:center;
-}
-
-.costume-placeholder{
-  padding:55px 20px;
-  border:2px dashed #9bc9aa;
-  border-radius:15px;
-  color:#6e8c79;
 }
 
 .form-box{
@@ -179,7 +152,7 @@ h1{
   border-radius:23px;
   background:#173f28;
   color:white;
-  box-shadow:0 18px 45px rgba(20,70,40,.2);
+  box-shadow:0 18px 45px #14462833;
 }
 
 .form-title{
@@ -195,9 +168,7 @@ h1{
   margin-bottom:23px;
 }
 
-.field{
-  margin-bottom:17px;
-}
+.field{margin-bottom:17px}
 
 label{
   display:block;
@@ -220,16 +191,33 @@ input{
 
 input:focus{
   border-color:#7cdb9a;
-  box-shadow:0 0 0 3px rgba(124,219,154,.12);
 }
 
-input::placeholder{
-  color:#789986;
+.file-note{
+  margin-top:7px;
+  color:#a9cdb4;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.preview{
+  display:none;
+  margin-top:14px;
+  padding:10px;
+  border:1px solid #527960;
+  border-radius:12px;
+  background:#0e2d1b;
+  text-align:center;
+}
+
+.preview img{
+  max-width:100%;
+  max-height:280px;
+  border-radius:9px;
 }
 
 .submit-btn{
   width:100%;
-  margin-top:4px;
   padding:16px;
   border:0;
   border-radius:12px;
@@ -241,12 +229,12 @@ input::placeholder{
 }
 
 .submit-btn:hover{
-  background:#8ae2a3;
+  background:#83dfa0;
 }
 
 .submit-btn:disabled{
   opacity:.6;
-  cursor:not-allowed;
+  cursor:wait;
 }
 
 .msg{
@@ -256,14 +244,6 @@ input::placeholder{
   border-radius:12px;
   text-align:center;
   font-weight:800;
-  line-height:1.6;
-}
-
-.success{
-  display:block;
-  background:#e5f8eb;
-  border:1px solid #b8e5c5;
-  color:#196337;
 }
 
 .error{
@@ -284,7 +264,6 @@ input::placeholder{
 }
 
 .thankyou h2{
-  margin:15px 0 10px;
   color:#1b6b3b;
   font-size:clamp(32px,5vw,50px);
 }
@@ -295,39 +274,18 @@ input::placeholder{
 }
 
 .footer{
-  margin-top:35px;
   text-align:center;
   color:#7b9183;
   font-size:12px;
-  letter-spacing:1px;
+  margin-top:35px;
 }
 
 @media(max-width:600px){
-
-  .wrap{
-    width:94%;
-  }
-
-  .panel{
-    padding:25px 18px;
-  }
-
-  h1{
-    letter-spacing:-4px;
-  }
-
-  .top{
-    font-size:9px;
-  }
-
-  .form-box{
-    padding:23px 18px;
-  }
-
+  .panel{padding:25px 18px}
+  h1{letter-spacing:-4px}
 }
 </style>
 </head>
-
 
 <body>
 
@@ -338,295 +296,238 @@ input::placeholder{
   <span>FINAL LEVEL</span>
 </div>
 
-
 <section class="panel">
-
-
-<!-- ==============================
-     HERO
-================================ -->
 
 <div class="hero">
 
-  <span class="badge">
-    LEVEL 5 / THE LAST THING
-  </span>
+<span class="badge">LEVEL 5 / THE LAST THING</span>
 
-  <h1>
-    GEDOR<br>
-    <span class="green">BANDUNG</span>
-  </h1>
+<h1>
+  GEDOR<br>
+  <span class="green">BANDUNG</span>
+</h1>
 
-  <div class="subtitle">
-    Gathering DMR
-  </div>
+<div class="subtitle">Gathering DMR</div>
 
-  <div class="motto">
-    Silih Asah, Silih Asih, Silih Asuh
-  </div>
-
-  <div class="divider"></div>
-
+<div class="motto">
+  Silih Asah, Silih Asih, Silih Asuh
 </div>
 
+<div class="divider"></div>
 
-<!-- ==============================
-     STORY
-================================ -->
+</div>
 
 <div class="story">
 
-  Selamat.
+Selamat.<br><br>
 
-  <br><br>
+Kamu berhasil melewati seluruh rangkaian
+<b>Misteri DMR</b>.<br><br>
 
-  Kamu berhasil melewati seluruh rangkaian
-  <b>Misteri DMR</b>.
+Dari kode, cahaya, hingga arsip yang menyimpan
+sesuatu yang tidak terlihat pada awalnya.<br><br>
 
-  <br><br>
-
-  Dari kode, cahaya, hingga arsip yang ternyata
-  menyimpan sesuatu yang tidak terlihat pada awalnya.
-
-  <br><br>
-
-  Tapi ternyata...
-
-  <br><br>
-
-  <b>
-    semua itu hanyalah jalan menuju satu hal.
-  </b>
+Ternyata semuanya hanyalah jalan menuju satu hal.
 
 </div>
-
-
-<!-- ==============================
-     FINAL REVEAL
-================================ -->
 
 <div class="reveal">
 
-  <div class="reveal-label">
-    THE FINAL REVEAL
-  </div>
-
-  <div class="reveal-text">
-    🇮🇩 INDONESIA ONLY 🇮🇩
-  </div>
-
+<div class="reveal-label">
+THE FINAL REVEAL
 </div>
 
+<div class="reveal-text">
+🇮🇩 INDONESIA ONLY 🇮🇩
+</div>
+
+</div>
 
 <div class="story">
 
-  <b>GEDOR BANDUNG</b>
+<b>GEDOR BANDUNG</b><br><br>
 
-  <br><br>
+Saatnya meninggalkan layar dan bertemu langsung.<br><br>
 
-  adalah saatnya kita meninggalkan layar
-  dan bertemu langsung.
+Untuk gathering kali ini:<br><br>
 
-  <br><br>
+<b>INDONESIA ONLY.</b><br><br>
 
-  Dan untuk gathering kali ini,
-  kita punya satu aturan penting:
-
-  <br><br>
-
-  <b>
-    INDONESIA ONLY.
-  </b>
-
-  <br><br>
-
-  Silih Asah, Silih Asih, Silih Asuh.
+<i>Silih Asah, Silih Asih, Silih Asuh.</i>
 
 </div>
 
 
-<!-- ==============================
-     COSTUME GUIDE
-================================ -->
+<!-- ========================= -->
+<!-- COSTUME GUIDE -->
+<!-- ========================= -->
 
 <div class="section">
 
-  <div class="section-title">
-    🇮🇩 Indonesian Costume Category Guide
-  </div>
+<div class="section-title">
+🇮🇩 Indonesian Costume Category Guide
+</div>
 
-  <div class="guide">
+<div class="guide">
 
-    <img
-      src="./Indonesian%20Costume%20Category%20Guide%20%281%29.png"
-      alt="Indonesian Costume Category Guide"
-    >
+<img
+src="./Indonesian%20Costume%20Category%20Guide%20%281%29.png"
+alt="Indonesian Costume Category Guide"
+>
 
-  </div>
+</div>
 
 </div>
 
 
-<!-- ==============================
-     COSTUME PHOTO SLOT
-================================ -->
-
-<div class="section">
-
-  <div class="section-title">
-    👗 Kostum Gathering
-  </div>
-
-  <div class="costume">
-
-    <div class="costume-placeholder">
-
-      📸
-
-      <br><br>
-
-      <b>FOTO KOSTUM GATHERING</b>
-
-      <br><br>
-
-      <small>
-        Slot ini bisa kamu isi dengan foto kostum
-        gathering yang sudah kamu upload ke GitHub.
-      </small>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ==============================
-     SUBMISSION FORM
-================================ -->
+<!-- ========================= -->
+<!-- SUBMISSION FORM -->
+<!-- ========================= -->
 
 <div class="form-box" id="formBox">
 
-  <div class="form-title">
-    🏁 Mission Complete
-  </div>
+<div class="form-title">
+🏁 Mission Complete
+</div>
 
-  <div class="form-desc">
+<div class="form-desc">
 
-    Kamu sudah sampai di akhir permainan.
+Masukkan <b>nama</b>, <b>uker</b>, dan upload
+<b>foto bukti kerja sama Uker</b>.<br><br>
 
-    <br><br>
-
-    Masukkan <b>nama</b> dan <b>uker</b>
-    untuk mencatat bahwa kamu telah menyelesaikan
-    seluruh misi.
-
-    <br><br>
-
-    <b>Waktu penyelesaian akan tercatat otomatis.</b>
-
-  </div>
-
-
-  <div class="field">
-
-    <label for="nama">
-      NAMA
-    </label>
-
-    <input
-      id="nama"
-      type="text"
-      placeholder="Nama lengkap"
-      autocomplete="name"
-    >
-
-  </div>
-
-
-  <div class="field">
-
-    <label for="uker">
-      UKER
-    </label>
-
-    <input
-      id="uker"
-      type="text"
-      placeholder="Unit kerja"
-    >
-
-  </div>
-
-
-  <button
-    class="submit-btn"
-    id="submitBtn"
-    onclick="submitMission()"
-  >
-    SELESAIKAN MISI →
-  </button>
-
-
-  <div id="message" class="msg"></div>
+Foto akan otomatis dikirim ke Google Drive
+dan data penyelesaian misi dicatat ke Google Sheets.
 
 </div>
 
 
-<!-- ==============================
-     THANK YOU
-================================ -->
+<div class="field">
+
+<label for="nama">
+NAMA
+</label>
+
+<input
+id="nama"
+type="text"
+placeholder="Nama lengkap"
+autocomplete="name"
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="uker">
+UKER
+</label>
+
+<input
+id="uker"
+type="text"
+placeholder="Unit kerja"
+autocomplete="organization"
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="foto">
+FOTO BUKTI KERJA SAMA UKER
+</label>
+
+<input
+id="foto"
+type="file"
+accept="image/jpeg,image/png,image/webp"
+>
+
+<div class="file-note">
+Pilih 1 foto bukti kerja sama Uker.<br>
+Format JPG, JPEG, PNG, atau WEBP. Maksimal 5 MB.
+</div>
+
+<div class="preview" id="preview">
+
+<img
+id="previewImg"
+alt="Preview foto"
+>
+
+</div>
+
+</div>
+
+
+<button
+class="submit-btn"
+id="submitBtn"
+onclick="submitMission()"
+>
+SELESAIKAN MISI →
+</button>
 
 <div
-  class="thankyou"
-  id="thankyou">
+id="message"
+class="msg"
+></div>
 
-  <div class="thankyou-icon">
-    🎉
-  </div>
+</div>
 
-  <h2>
-    Terima Kasih!
-  </h2>
 
-  <p>
+<!-- ========================= -->
+<!-- THANK YOU -->
+<!-- ========================= -->
 
-    Kamu telah menyelesaikan seluruh
-    rangkaian <b>Misteri DMR</b>.
+<div
+class="thankyou"
+id="thankyou"
+>
 
-    <br><br>
+<div class="thankyou-icon">
+🎉
+</div>
 
-    Semua clue telah ditemukan.
-    Semua misi telah diselesaikan.
+<h2>
+Terima Kasih!
+</h2>
 
-    <br><br>
+<p>
 
-    Sekarang waktunya bertemu
-    di dunia nyata.
+Kamu telah menyelesaikan seluruh rangkaian
+<b>Misteri DMR</b>.
 
-  </p>
+<br><br>
 
-  <div class="reveal-text">
-    GEDOR BANDUNG
-  </div>
+Sekarang waktunya bertemu di dunia nyata.
 
-  <p>
-    <i>
-      Silih Asah, Silih Asih, Silih Asuh
-    </i>
-  </p>
+</p>
 
-  <p>
-    🇮🇩 Sampai jumpa di Gathering DMR! 🇮🇩
-  </p>
+<div class="reveal-text">
+GEDOR BANDUNG
+</div>
+
+<p>
+<i>
+Silih Asah, Silih Asih, Silih Asuh
+</i>
+</p>
+
+<p>
+🇮🇩 Sampai jumpa di Gathering DMR! 🇮🇩
+</p>
 
 </div>
 
 
 <div class="footer">
-  DMR // CASE 047 // END OF TRANSMISSION
-</div>
 
+DMR // CASE 047 // END OF TRANSMISSION
+
+</div>
 
 </section>
 
@@ -635,176 +536,298 @@ input::placeholder{
 
 <script>
 
-/* =====================================================
-   GOOGLE APPS SCRIPT WEB APP
-===================================================== */
+/*
+====================================================
+APPS SCRIPT URL
+====================================================
+*/
 
 const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbww6D-Pn8RK1V5R43rOPm_Q5g3KkRuGoXE9SAAVk8qq5DYB13ENMXqI-jUHZIrAoPc/exec";
 
 
-/* =====================================================
-   SUBMIT MISSION
-===================================================== */
+/*
+====================================================
+PHOTO PREVIEW
+====================================================
+*/
 
-function submitMission(){
+document
+.getElementById("foto")
+.addEventListener("change", function(){
 
-  const nama =
-    document.getElementById("nama").value.trim();
+  const file = this.files[0];
 
-  const uker =
-    document.getElementById("uker").value.trim();
+  const preview =
+  document.getElementById("preview");
 
-  const message =
-    document.getElementById("message");
-
-  const button =
-    document.getElementById("submitBtn");
+  const image =
+  document.getElementById("previewImg");
 
 
-  /* -------------------------
-     VALIDASI
-  ------------------------- */
+  if(!file){
 
-  if(!nama || !uker){
-
-    message.className="msg error";
-
-    message.innerHTML =
-      "✕ Nama dan Uker wajib diisi.";
+    preview.style.display = "none";
 
     return;
 
   }
 
 
-  /* -------------------------
-     BUTTON
-  ------------------------- */
+  if(
+    !file.type.startsWith("image/") ||
+    file.size > 5 * 1024 * 1024
+  ){
 
-  button.disabled=true;
+    this.value = "";
 
-  button.innerHTML=
-    "MENYIMPAN DATA...";
+    preview.style.display = "none";
 
+    alert(
+      "File harus berupa gambar dan maksimal 5 MB."
+    );
 
-  /* -------------------------
-     HIDDEN IFRAME
-  ------------------------- */
+    return;
 
-  const iframe =
-    document.createElement("iframe");
-
-  iframe.name =
-    "submission_frame";
-
-  iframe.style.display="none";
-
-  document.body.appendChild(iframe);
+  }
 
 
-  /* -------------------------
-     FORM
-  ------------------------- */
-
-  const form =
-    document.createElement("form");
-
-  form.method="POST";
-
-  form.action=GOOGLE_SCRIPT_URL;
-
-  form.target="submission_frame";
-
-  form.style.display="none";
+  const reader = new FileReader();
 
 
-  /* -------------------------
-     NAMA
-  ------------------------- */
+  reader.onload = function(event){
 
-  const namaInput =
-    document.createElement("input");
+    image.src = event.target.result;
 
-  namaInput.type="hidden";
+    preview.style.display = "block";
 
-  namaInput.name="nama";
-
-  namaInput.value=nama;
+  };
 
 
-  /* -------------------------
-     UKER
-  ------------------------- */
+  reader.readAsDataURL(file);
 
-  const ukerInput =
-    document.createElement("input");
-
-  ukerInput.type="hidden";
-
-  ukerInput.name="uker";
-
-  ukerInput.value=uker;
+});
 
 
-  form.appendChild(namaInput);
+/*
+====================================================
+SUBMIT MISSION
+====================================================
+*/
 
-  form.appendChild(ukerInput);
+function submitMission(){
 
-  document.body.appendChild(form);
+  const nama =
+  document.getElementById("nama")
+  .value
+  .trim();
 
 
-  /* -------------------------
-     KIRIM DATA
-  ------------------------- */
+  const uker =
+  document.getElementById("uker")
+  .value
+  .trim();
 
-  form.submit();
+
+  const foto =
+  document.getElementById("foto")
+  .files[0];
+
+
+  const message =
+  document.getElementById("message");
+
+
+  const button =
+  document.getElementById("submitBtn");
 
 
   /*
-   * Beri waktu Apps Script
-   * menerima data sebelum
-   * menampilkan halaman selesai.
-   */
+  VALIDATION
+  */
 
-  setTimeout(function(){
+  if(!nama || !uker || !foto){
 
-    document.getElementById(
-      "formBox"
-    ).style.display="none";
+    message.className = "msg error";
 
+    message.innerHTML =
+    "✕ Nama, Uker, dan foto bukti kerja sama wajib diisi.";
 
-    document.getElementById(
-      "thankyou"
-    ).style.display="block";
+    return;
+
+  }
 
 
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
+  if(foto.size > 5 * 1024 * 1024){
+
+    message.className = "msg error";
+
+    message.innerHTML =
+    "✕ Ukuran foto maksimal 5 MB.";
+
+    return;
+
+  }
+
+
+  /*
+  LOCK BUTTON
+  */
+
+  button.disabled = true;
+
+  button.innerHTML =
+  "MENGIRIM DATA...";
+
+
+  /*
+  READ PHOTO
+  */
+
+  const reader =
+  new FileReader();
+
+
+  reader.onload = function(event){
+
+    const base64 =
+    event.target.result.split(",")[1];
+
+
+    const payload = {
+
+      nama: nama,
+
+      uker: uker,
+
+      fileName: foto.name,
+
+      mimeType: foto.type,
+
+      fileData: base64
+
+    };
+
+
+    /*
+    SEND TO GOOGLE APPS SCRIPT
+    */
+
+    fetch(
+      GOOGLE_SCRIPT_URL,
+      {
+        method:"POST",
+
+        headers:{
+          "Content-Type":
+          "text/plain;charset=utf-8"
+        },
+
+        body:JSON.stringify(payload)
+      }
+    )
+
+    .then(function(response){
+
+      return response.json();
+
+    })
+
+    .then(function(result){
+
+      if(!result.success){
+
+        throw new Error(
+          result.message ||
+          "Upload gagal."
+        );
+
+      }
+
+
+      /*
+      SUCCESS
+      */
+
+      document
+      .getElementById("formBox")
+      .style.display = "none";
+
+
+      document
+      .getElementById("thankyou")
+      .style.display = "block";
+
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+    })
+
+    .catch(function(error){
+
+      button.disabled = false;
+
+      button.innerHTML =
+      "SELESAIKAN MISI →";
+
+
+      message.className =
+      "msg error";
+
+
+      message.innerHTML =
+      "✕ Data belum berhasil dikirim.<br><br>" +
+      "<small>" +
+      error.message +
+      "</small>";
+
     });
 
-  },1500);
+  };
+
+
+  reader.readAsDataURL(foto);
 
 }
 
 
-/* =====================================================
-   ENTER KEY
-===================================================== */
+/*
+====================================================
+ENTER KEY
+====================================================
+*/
+
+document
+.getElementById("nama")
+.addEventListener("keydown",function(event){
+
+  if(event.key === "Enter"){
+
+    document
+    .getElementById("uker")
+    .focus();
+
+  }
+
+});
+
 
 document
 .getElementById("uker")
-.addEventListener(
-  "keydown",
-  function(e){
+.addEventListener("keydown",function(event){
 
-    if(e.key==="Enter"){
-      submitMission();
-    }
+  if(event.key === "Enter"){
+
+    document
+    .getElementById("foto")
+    .click();
 
   }
-);
+
+});
 
 </script>
 
