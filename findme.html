@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DMR — The Button That Doesn't Work</title>
+<title>DMR — Yeay You Won!</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:#030605;color:#e9f4ec}
@@ -38,7 +38,7 @@ h1{font-size:clamp(40px,7vw,70px);line-height:.95;letter-spacing:-3px;margin:30p
 <button class="real-button" onclick="fakeClick()">CONTINUE →</button>
 <div class="message" id="message"></div>
 
-<!-- This is NOT the button. Stop clicking it. -->
+<!-- Ini kah tombolnya. -->
 <div class="secret" onclick="discover()"></div>
 
 <div class="tiny">Everything looks exactly where it should be.</div>
@@ -60,13 +60,14 @@ let clicks=0;
 function fakeClick(){
   clicks++;
   const m=document.getElementById("message");
-  if(clicks===1)m.innerHTML="Nothing happened.";
-  else if(clicks===2)m.innerHTML="Still nothing.";
-  else if(clicks===3)m.innerHTML="Maybe try again?";
-  else if(clicks===5)m.innerHTML="Why do you keep clicking the same thing?";
-  else if(clicks===10)m.innerHTML="Seriously?";
-  else if(clicks===15)m.innerHTML="The button is fine.";
-  else if(clicks>15)m.innerHTML="The problem might not be the button.";
+  if(clicks===1)m.innerHTML="ga ada apa-apa ya";
+  else if(clicks===2)m.innerHTML="klik lagi coba.";
+  else if(clicks===3)m.innerHTML="kurang ampuh kliknya";
+  else if(clicks===5)m.innerHTML="wow klik brutal?";
+  else if(clicks===10)m.innerHTML="stop stop sakit tau";
+  else if(clicks===15)m.innerHTML="dahlah";
+  else if(clicks===20)m.innerHTML="bisa pergi ga?";
+  else if(clicks===30)m.innerHTML="selayaknya manusia normal bisa ga?";
 }
 function discover(){
   document.getElementById("game").style.display="none";
