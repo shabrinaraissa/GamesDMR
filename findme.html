@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DMR — The Button That Doesn't Work</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:#030605;color:#e9f4ec}
+.wrap{width:min(850px,92%);margin:auto;padding:45px 0}
+.top{display:flex;justify-content:space-between;color:#66756c;font-size:11px;letter-spacing:2px}
+.panel{margin-top:18px;min-height:620px;background:#070b09;border:1px solid #1d2b23;border-radius:26px;padding:45px 30px;box-shadow:0 20px 70px rgba(0,0,0,.75);text-align:center;position:relative}
+.badge{display:inline-block;background:#0d2117;color:#7dd995;border:1px solid #214c32;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:800;letter-spacing:1px}
+h1{font-size:clamp(40px,7vw,70px);line-height:.95;letter-spacing:-3px;margin:30px 0 16px}
+.green{color:#73d68e}
+.sub{color:#9aa9a0;line-height:1.7;margin-bottom:45px}
+.real-button{display:inline-block;padding:16px 30px;border:0;border-radius:12px;background:#2c8f50;color:#fff;font-size:17px;font-weight:900;cursor:pointer;box-shadow:0 8px 25px rgba(44,143,80,.18);transition:.15s}
+.real-button:hover{background:#39a55f;transform:translateY(-1px)}
+.message{min-height:30px;margin-top:25px;color:#7d8d83;font-size:14px}
+.tiny{position:absolute;bottom:24px;left:0;right:0;color:#3f4c44;font-size:11px}
+.secret{position:absolute;width:95px;height:70px;right:105px;top:315px;cursor:pointer}
+.clear{display:none}
+.clear h2{font-size:42px;margin:20px 0 10px}
+.clear p{color:#9aa9a0;line-height:1.7}
+.next{display:inline-block;margin-top:20px;padding:14px 22px;background:#73d68e;color:#06200f;text-decoration:none;border-radius:11px;font-weight:900}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="top"><span>DMR // CASE 047</span><span>UNKNOWN LEVEL</span></div>
+<section class="panel">
+
+<div id="game">
+<span class="badge">CONGRATULATIONS</span>
+<h1>You found<br><span class="green">the next level.</span></h1>
+<p class="sub">Apparently, you've done everything correctly.<br><br>Just press the button below.</p>
+
+<button class="real-button" onclick="fakeClick()">CONTINUE →</button>
+<div class="message" id="message"></div>
+
+<!-- This is NOT the button. Stop clicking it. -->
+<div class="secret" onclick="discover()"></div>
+
+<div class="tiny">Everything looks exactly where it should be.</div>
+</div>
+
+<div id="clear" class="clear">
+<span class="badge">FOUND</span>
+<h2>Oh.</h2>
+<p>You were looking at the button.<br>You should have been looking <b>around</b> it.</p>
+<p style="color:#73d68e;font-weight:800">LEVEL CLEAR.</p>
+<a class="next" href="level3.html">CONTINUE →</a>
+</div>
+
+</section>
+</main>
+
+<script>
+let clicks=0;
+function fakeClick(){
+  clicks++;
+  const m=document.getElementById("message");
+  if(clicks===1)m.innerHTML="Nothing happened.";
+  else if(clicks===2)m.innerHTML="Still nothing.";
+  else if(clicks===3)m.innerHTML="Maybe try again?";
+  else if(clicks===5)m.innerHTML="Why do you keep clicking the same thing?";
+  else if(clicks===10)m.innerHTML="Seriously?";
+  else if(clicks===15)m.innerHTML="The button is fine.";
+  else if(clicks>15)m.innerHTML="The problem might not be the button.";
+}
+function discover(){
+  document.getElementById("game").style.display="none";
+  document.getElementById("clear").style.display="block";
+}
+</script>
+</body>
+</html>
